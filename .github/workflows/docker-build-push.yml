@@ -24,11 +24,11 @@ jobs:
           sudo apt update
           sudo apt install -y r-base  # Install the latest R version available
           
-      - name: Install R package - purrr
+      - name: Install R package - purrr (v0.3.3)
         run: |
           R -e "dir.create('~/R/library', showWarnings = FALSE, recursive = TRUE)"
-          R -e "install.packages('purrr', repos='http://cran.rstudio.com/', lib='~/R/library')"   
-          
+          R -e "install.packages('https://cran.r-project.org/src/contrib/Archive/purrr/purrr_0.3.3.tar.gz', repos=NULL, type='source', lib='~/R/library')"
+
       - name: Verify R Installation
         run: R --version
 
