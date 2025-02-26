@@ -26,7 +26,8 @@ jobs:
           
       - name: Install R package - purrr
         run: |
-          R -e "install.packages('purrr', repos='http://cran.rstudio.com/')"   
+          R -e "dir.create('~/R/library', showWarnings = FALSE, recursive = TRUE)"
+          R -e "install.packages('purrr', repos='http://cran.rstudio.com/', lib='~/R/library')"   
           
       - name: Verify R Installation
         run: R --version
