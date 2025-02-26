@@ -24,6 +24,10 @@ jobs:
           sudo apt update
           sudo apt install -y r-base  # Install the latest R version available
           
+      - name: Install R package - purrr
+        run: |
+          R -e "install.packages('purrr', repos='http://cran.rstudio.com/')"   
+          
       - name: Verify R Installation
         run: R --version
 
